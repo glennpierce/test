@@ -26,18 +26,6 @@ export class ShimmySection {
    
     let self = this;
 
-    if(this.shimmy.isAuthenticated()) {
-      if(urlParams.id === undefined) {
-        this.section_detail = this.app.section_pages.get('yourhome');
-      }
-      else {
-        this.section_detail = this.app.section_pages.get(urlParams.id);
-      }
-      return;
-    }
-
-    if(!urlParams.hasOwnProperty('uuid')) {
-
       let auth = { username: '', password: '', error : ""};
 
       this.dialogService.open({ viewModel: Login, model: auth}).then(response => {
@@ -50,10 +38,6 @@ export class ShimmySection {
           }
         }
       });
-    }
-    else {
-      // Log in with uuid
-      this.shimmy.loginUUID(urlParams.uuid);
-    }
+   
   }
 }
