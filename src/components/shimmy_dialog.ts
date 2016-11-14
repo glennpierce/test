@@ -24,18 +24,6 @@ export class ShimmyDialog {
   attached() {
     let self = this;
 
-    // this.element.children[0].addEventListener("click", function(){ 
-    //   if(self.type === "iframe") {
-    //     self.dialogService.open({ viewModel: ShimmyDialog, model: self}).then(response => {
-    //     });
-    //   }
-    //   else if(self.type === "video") {
-    //     self.dialogService.open({ viewModel: ShimmyDialog, model: self}).then(response => {
-    //     });
-    //   }
-    //   return false;
-    // });
-
     this.element.children[0].addEventListener("click", function(){ 
       if(self.type === "iframe") {
         self.dialogService.open({ viewModel: ShimmyDialogModel, model: {'type':"iframe"}}).then(response => {
@@ -49,18 +37,6 @@ export class ShimmyDialog {
     });
 
   }
-
-  // isVideo() : boolean {
-  //   return this.type === "video";
-  // }
-
-  // isIframe() : boolean {
-  //   return this.type === "iframe";
-  // }
-
-  // async typeChanged(newValue) {
-  //   this.type = newValue;
-  // }
 
   async hrefChanged(newValue) {
     this.href = newValue;

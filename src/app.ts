@@ -31,38 +31,7 @@ export class App {
     //this.router.refreshNavigation();
   }
 
-  groupBy( array , f )
-  {
-    var groups = {};
-    array.forEach( function( o )
-    {
-      var group = JSON.stringify( f(o) );
-      groups[group] = groups[group] || [];
-      groups[group].push( o );  
-    });
-    return Object.keys(groups).map( function( group )
-    {
-      return groups[group]; 
-    })
-  }
-
-  async groupPages() {
-    let pages = await this.shimmy.getPages();
-  
-    let sections = await this.groupBy(pages, function(p)
-    {
-        return [p.section_name.toLowerCase()];
-    });
-
-    for(var i=0; i < sections.length; i++) {
-        console.log(sections[i][0].section_name);
-        let title =  sections[i][0].section_name;
-        let key = title.toLowerCase().replace(/\s+/g, '');   
-        this.section_pages.set(key, new SectionDetails(key, title, sections[i]));
-    }
-  }
-
   async activate(params) {
-    await this.groupPages();
+
   }
 }
