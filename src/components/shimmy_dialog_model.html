@@ -1,0 +1,19 @@
+<template>
+  <ai-dialog>
+    <ai-dialog-header>
+    </ai-dialog-header>
+    <ai-dialog-body>
+      <div if.bind="isVideo()">
+          Video
+      </div>
+      <div if.bind="isIframe()">
+          IFrame
+      </div>
+    </ai-dialog-body>
+
+    <ai-dialog-footer>
+      <button click.trigger="controller.cancel()">Close</button>
+      <button click.trigger="controller.ok()">Ok</button>
+    </ai-dialog-footer>
+  </ai-dialog>
+</template>

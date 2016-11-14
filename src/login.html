@@ -1,0 +1,23 @@
+<template>
+  <ai-dialog>
+    <ai-dialog-header>
+    </ai-dialog-header>
+    <ai-dialog-body>
+      <h2>Username:</h2>
+      <input value.bind="auth.username" attach-focus="true" />
+      <br />
+      <h2>Password:</h2>
+      <input type="password" value.bind="auth.password" attach-focus="false" />
+      <br /><br />
+      <span innerhtml.bind="auth.error">No Error</span>
+    </ai-dialog-body>
+
+    <ai-dialog-footer>
+      <!--
+      <button click.trigger="controller.cancel()">Cancel</button>
+      -->
+
+      <button click.trigger="tryLogin(auth)">Ok</button>
+    </ai-dialog-footer>
+  </ai-dialog>
+</template>
