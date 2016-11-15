@@ -4,7 +4,7 @@ import {Shimmy, IPage} from './shimmy';
 
 @inject(Shimmy, DialogController)
 export class Login {
-  static inject = [DialogController];
+  //static inject = [DialogController];
   auth = { username: '', password: '', error: '' };
 
   constructor(private shimmy: Shimmy, private controller : DialogController){

@@ -3,7 +3,7 @@ import {DialogService} from 'aurelia-dialog';
 import {Shimmy, IPage} from './shimmy';
 import {App} from './app';
 import {SectionDetails} from './section_details';
-import {Login} from './login';
+//import {Login} from './login';
 
 
 @inject(App, Shimmy, DialogService)
@@ -26,18 +26,20 @@ export class ShimmySection {
    
     let self = this;
 
-      let auth = { username: '', password: '', error : ""};
+    return new Promise( function (resolve, reject) {
+      setTimeout( () => {
+        
+            let auth = { username: '', password: '', error : ""};
 
-      this.dialogService.open({ viewModel: Login, model: auth}).then(response => {
+            self.dialogService.open({ viewModel: 'login', model: auth}).catch(response => {
 
-        if (!response.wasCancelled) {
-          this.shimmy.loginUsername(response.output.username, response.output.password);
+              console.log(response);
+            });
+    
+        }, 1000 );
+    });
 
-          if(this.shimmy.isAuthenticated()) {
-              this.section_detail = this.app.section_pages.get('yourhome');
-          }
-        }
-      });
+      
    
   }
 }
