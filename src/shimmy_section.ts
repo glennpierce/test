@@ -26,20 +26,12 @@ export class ShimmySection {
    
     let self = this;
 
-    return new Promise( function (resolve, reject) {
-      setTimeout( () => {
-        
-            let auth = { username: '', password: '', error : ""};
+    let auth = { username: '', password: '', error : ""};
 
-            self.dialogService.open({ viewModel: 'login', model: auth}).catch(response => {
+    self.dialogService.open({ viewModel: 'login', model: auth}).catch(response => {
 
-              console.log(response);
-            });
-    
-        }, 1000 );
+      console.log(response);
     });
 
-      
-   
   }
 }
