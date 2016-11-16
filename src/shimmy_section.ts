@@ -15,7 +15,6 @@ export class ShimmySection {
   constructor(private app: App, private shimmy: Shimmy,
               private dialogService: DialogService) {    
 
-        let gg=67;
   }
 
   showFlatPage(flatpage: number) {
@@ -23,7 +22,8 @@ export class ShimmySection {
   }
 
   activate(urlParams, routeMap, navInstr) {
-   
+  
+/* 
     let self = this;
 
     return new Promise( function (resolve, reject) {
@@ -38,7 +38,7 @@ export class ShimmySection {
     
         }, 1000 );
     });
-
+*/
       
    
   }
