@@ -15,6 +15,7 @@ export class ShimmySection {
   constructor(private app: App, private shimmy: Shimmy,
               private dialogService: DialogService) {    
 
+        let gg=67;
   }
 
   showFlatPage(flatpage: number) {
@@ -22,24 +23,17 @@ export class ShimmySection {
   }
 
   activate(urlParams, routeMap, navInstr) {
-  
-/* 
+
+/*   
     let self = this;
 
-    return new Promise( function (resolve, reject) {
-      setTimeout( () => {
-        
-            let auth = { username: '', password: '', error : ""};
+    let auth = { username: '', password: '', error : ""};
 
-            self.dialogService.open({ viewModel: 'login', model: auth}).catch(response => {
+    self.dialogService.open({ viewModel: 'login', model: auth}).catch(response => {
 
-              console.log(response);
-            });
-    
-        }, 1000 );
+      console.log(response);
     });
 */
-      
-   
+
   }
 }
